@@ -1,13 +1,16 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import { ItemsGrid, ItemStyles } from '../styles/Grids';
 
-export default function ItemGrid({ items }) {
+export default function ItemGrid({ items, base }) {
   return (
     <ItemsGrid>
       {items.map((item) => (
         <ItemStyles key={item._id}>
           <p>
-            <span className="mark">{item.name}</span>
+            <Link to={`${base}/${item.slug.current}`}>
+              <span className="mark">{item.name}</span>
+            </Link>
           </p>
           <img
             width="500"

@@ -16,7 +16,9 @@ function CurrentlySlicing({ slicemasters }) {
       {slicemasters && !slicemasters?.length && (
         <p>No one is working right now...</p>
       )}
-      {slicemasters?.length && <ItemGrid items={slicemasters} />}
+      {slicemasters?.length && (
+        <ItemGrid items={slicemasters} base="/slicemasters" />
+      )}
     </div>
   );
 }
@@ -30,7 +32,7 @@ function HotSlices({ hotSlices }) {
       <p>Come on by, buy the slice!</p>
       {!hotSlices && <LoadingGrid count={4} />}
       {hotSlices && !hotSlices?.length && <p>Nothin' in the xase...</p>}
-      {hotSlices?.length && <ItemGrid items={hotSlices} />}
+      {hotSlices?.length && <ItemGrid items={hotSlices} base="/pizza" />}
     </div>
   );
 }

@@ -2,8 +2,12 @@ import styled from 'styled-components';
 
 export const HomePageGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  --columns: 2;
+  grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
   gap: 2rem;
+  @media (max-width: 800px) {
+    --columns: 1;
+  }
 `;
 
 export const ItemsGrid = styled.div`
@@ -19,6 +23,9 @@ export const ItemStyles = styled.div`
   img {
     height: auto;
     font-size: 0;
+  }
+  a {
+    text-decoration: none;
   }
   p {
     top: 0;

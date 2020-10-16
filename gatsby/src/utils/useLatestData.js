@@ -14,6 +14,9 @@ const info = `
         }
       }
     }
+    slug {
+      current
+    }
 `;
 
 export default function useLatestData() {
