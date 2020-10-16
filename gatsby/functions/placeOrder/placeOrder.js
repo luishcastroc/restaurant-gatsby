@@ -42,7 +42,7 @@ exports.handler = async (event, context) => {
       }),
     };
   }
-  const requiredFields = ['email', 'name', 'order'];
+  const requiredFields = ['name', 'email', 'order'];
 
   for (const field of requiredFields) {
     if (!body[field]) {
